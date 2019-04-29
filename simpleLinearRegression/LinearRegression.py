@@ -27,11 +27,11 @@ class LinearRegression(object):
         denominator = math.sqrt(self.getSquaredSum(self.__xDiff) * self.getSquaredSum(self.__yDiff)) 
         return numerator / denominator
     
-    def getStandardDeviation(self, count, summation):
-        ''' Sx = sqrt(sum(x-x')^2 / n-1) '''
-        value = self.getDiff(count)
+    def getStandardDeviation(self, arr):
+        ''' FIXME: Sx = sqrt(sum(x-x')^2 / n-1) '''
+        value = self.getDiff(arr)
         squaredSum = self.getSquaredSum(value)
-        return math.sqrt(squaredSum / (self.getCount(count) - 1))
+        return math.sqrt(squaredSum / (self.getCount(arr) - 1))
 
     def getMean(self, column):
         ''' Find mean value of an array '''
@@ -46,12 +46,12 @@ class LinearRegression(object):
         return math.fsum(column)
 
     def getDiff(self, column):
-        ''' return: sum(x - x') as an array'''
+        ''' return: sum(x - x') as an array, and round it to decimals '''
         sum = []
         mean = self.getMean(column)
         for d in column:
             #  (x - x') for all elements, and append each to sum[]
-            sum.append(d - mean)
+            sum.append(round(d - mean, 2))
         return sum 
 
     def getSquaredSum(self, column):
@@ -62,8 +62,9 @@ class LinearRegression(object):
         return sum
     
     def getProduct(self, x, y):
+        ''' Get product of the two arrays, and round it to 2-decimals '''
         product = []
         for a in range(self.getCount(x)):
-            product.append(x[a] * y[a])
+            product.append(round(x[a] * y[a], 2))
         
         return product
