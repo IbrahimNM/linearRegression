@@ -2,7 +2,9 @@
 
 class LinearRegression(object):
     
-    def __init__(self):
+    def __init__(self, independentVariable, dependentVariable):
+        self.__x = independentVariable
+        self.__y = dependentVariable
         pass
     
     def getLinearRegressionFunction(self):
@@ -21,6 +23,15 @@ class LinearRegression(object):
         ''' r = sum((x-x')(y-y')) / sqrt(sum(x-x')^2 * sum(y-y')^2) '''
         return 0
     
-    def getStandardDeviation(self):
-        ''' Sx = sqrt(sum(x-x')^2 / n-2) '''
+    def getStandardDeviation(self, count, summation):
+        ''' Sx = sqrt(sum(x-x')^2 / n-1) '''
+        return 0
+
+    def getMean(self, column):
+        return 0
+    
+    def getCount(self, column):
+        return 0
+    
+    def getSummation(self, column):
         return 0
