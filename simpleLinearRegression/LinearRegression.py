@@ -5,19 +5,19 @@ class LinearRegression(object):
     def __init__(self, independentVariable, dependentVariable):
         self.__x = independentVariable
         self.__y = dependentVariable
-        pass
+        self.__slope = self.getSlope()
+        self.__yIntercept = self.getYintercept()
     
     def getLinearRegressionFunction(self):
-        ''' y(x) = a + bx '''
-        return 0
+        ''' return: y(x) = a + bx '''
+        return lambda x: self.__yIntercept + self.__slope * x
 
     def getSlope(self):
-        ''' b = r * (Sy/Sx) '''
+        ''' return slope: b = r * (Sy/Sx) '''
         return 0
-    
     def getYintercept(self):
-        ''' a = y' - bx' '''
-        return 0
+        ''' return Yintercept: a = y' - bx' '''
+        return self.getMean(self.__y) - (self.getSlope() * self.getMean(self.__x))
     
     def getPearsonCorrelationCoefficient(self):
         ''' r = sum((x-x')(y-y')) / sqrt(sum(x-x')^2 * sum(y-y')^2) '''
