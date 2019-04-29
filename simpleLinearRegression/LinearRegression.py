@@ -1,12 +1,14 @@
-
+import math
 
 class LinearRegression(object):
     
     def __init__(self, independentVariable, dependentVariable):
         self.__x = independentVariable
         self.__y = dependentVariable
-        self.__slope = self.getSlope()
-        self.__yIntercept = self.getYintercept()
+        self.__xDiff = self.getDiff(self.__x)
+        self.__yDiff = self.getDiff(self.__y)
+        #self.__slope = self.getSlope()
+        #self.__yIntercept = self.getYintercept()
     
     def getLinearRegressionFunction(self):
         ''' return: y(x) = a + bx '''
@@ -28,10 +30,19 @@ class LinearRegression(object):
         return 0
 
     def getMean(self, column):
-        return 0
+        return self.getSummation(column) / self.getCount(column)
     
     def getCount(self, column):
-        return 0
+        return len(column)
     
     def getSummation(self, column):
-        return 0
+        return math.fsum(column)
+
+    def getDiff(self, column):
+        ''' return: sum(x - x') as an array'''
+        sum = []
+        mean = self.getMean(column)
+        for d in column:
+            #  (x - x') for all elements, then return sum
+            sum.append(d - mean)
+        return sum 
