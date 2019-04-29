@@ -23,19 +23,26 @@ class LinearRegression(object):
     
     def getPearsonCorrelationCoefficient(self):
         ''' r = sum((x-x')(y-y')) / sqrt(sum(x-x')^2 * sum(y-y')^2) '''
-        return 0
+        numerator = self.getSummation(self.getProduct(self.__xDiff, self.__yDiff))
+        denominator = math.sqrt(self.getSquaredSum(self.__xDiff) * self.getSquaredSum(self.__yDiff)) 
+        return numerator / denominator
     
     def getStandardDeviation(self, count, summation):
         ''' Sx = sqrt(sum(x-x')^2 / n-1) '''
-        return 0
+        value = self.getDiff(count)
+        squaredSum = self.getSquaredSum(value)
+        return math.sqrt(squaredSum / (self.getCount(count) - 1))
 
     def getMean(self, column):
+        ''' Find mean value of an array '''
         return self.getSummation(column) / self.getCount(column)
     
     def getCount(self, column):
+        ''' Get number of elements'''
         return len(column)
     
     def getSummation(self, column):
+        ''' Sums all elements '''
         return math.fsum(column)
 
     def getDiff(self, column):
@@ -43,6 +50,21 @@ class LinearRegression(object):
         sum = []
         mean = self.getMean(column)
         for d in column:
-            #  (x - x') for all elements, then return sum
+            #  (x - x') for all elements, and append each to sum[]
             sum.append(d - mean)
         return sum 
+
+    def getSquaredSum(self, column):
+        ''' Square each element, then sum them togather '''
+        sum = 0
+        for a in column:
+            sum += math.pow(a, 2)
+        return sum
+    
+    def getProduct(self, x, y):
+        product = []
+        for a in x:
+            for b in y:
+                product.append(a*b)
+        
+        return product
