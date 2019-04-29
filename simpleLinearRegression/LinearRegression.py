@@ -63,8 +63,7 @@ class LinearRegression(object):
     
     def getProduct(self, x, y):
         product = []
-        for a in x:
-            for b in y:
-                product.append(a*b)
+        for a in range(self.getCount(x)):
+            product.append(x[a] * y[a])
         
         return product
