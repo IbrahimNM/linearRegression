@@ -1,34 +1,34 @@
 import math
 
+
 class LinearRegression(object):
-    
+
     def __init__(self, independentVariable, dependentVariable):
         self.__x = independentVariable
         self.__y = dependentVariable
-        self.__xDiff = self.getDiff(self.__x)
-        self.__yDiff = self.getDiff(self.__y)
-        #self.__slope = self.getSlope()
-        #self.__yIntercept = self.getYintercept()
-    
+
     def getLinearRegressionFunction(self):
         ''' return: y(x) = a + bx '''
-        return lambda x: self.__yIntercept + self.__slope * x
+        return lambda x: self.getYintercept() + self.getSlope() * x
 
     def getSlope(self):
         ''' return slope: b = r * (Sy/Sx) '''
-        return 0
+        return self.getPearsonCorrelationCoefficient() * (self.getStandardDeviation(self.__y) / self.getStandardDeviation(self.__x))
+
     def getYintercept(self):
         ''' return Yintercept: a = y' - bx' '''
         return self.getMean(self.__y) - (self.getSlope() * self.getMean(self.__x))
-    
+
     def getPearsonCorrelationCoefficient(self):
         ''' r = sum((x-x')(y-y')) / sqrt(sum(x-x')^2 * sum(y-y')^2) '''
-        numerator = self.getSummation(self.getProduct(self.__xDiff, self.__yDiff))
-        denominator = math.sqrt(self.getSquaredSum(self.__xDiff) * self.getSquaredSum(self.__yDiff)) 
+        numerator = self.getSummation(
+            self.getProduct(self.getDiff(self.__x), self.getDiff(self.__y)))
+        denominator = math.sqrt(self.getSquaredSum(
+            self.getDiff(self.__x)) * self.getSquaredSum(self.getDiff(self.__y)))
         return numerator / denominator
-    
+
     def getStandardDeviation(self, arr):
-        ''' FIXME: Sx = sqrt(sum(x-x')^2 / n-1) '''
+        ''' return: Sx = sqrt(sum(x-x')^2 / n-1) '''
         value = self.getDiff(arr)
         squaredSum = self.getSquaredSum(value)
         return math.sqrt(squaredSum / (self.getCount(arr) - 1))
@@ -36,23 +36,23 @@ class LinearRegression(object):
     def getMean(self, column):
         ''' Find mean value of an array '''
         return self.getSummation(column) / self.getCount(column)
-    
+
     def getCount(self, column):
-        ''' Get number of elements'''
-        return len(column)
-    
+        ''' return: # of elements. return length of x[] if x[] length is not greater than y[] length'''
+        return len(self.__x) if len(self.__y) >= len(self.__x) else len(self.__y)
+
     def getSummation(self, column):
         ''' Sums all elements '''
         return math.fsum(column)
 
     def getDiff(self, column):
-        ''' return: sum(x - x') as an array, and round it to decimals '''
+        ''' return: (x - x') as an array, and round its values to 2-decimals '''
         sum = []
         mean = self.getMean(column)
         for d in column:
             #  (x - x') for all elements, and append each to sum[]
             sum.append(round(d - mean, 2))
-        return sum 
+        return sum
 
     def getSquaredSum(self, column):
         ''' Square each element, then sum them togather '''
@@ -60,11 +60,11 @@ class LinearRegression(object):
         for a in column:
             sum += math.pow(a, 2)
         return sum
-    
+
     def getProduct(self, x, y):
         ''' Get product of the two arrays, and round it to 2-decimals '''
         product = []
         for a in range(self.getCount(x)):
             product.append(round(x[a] * y[a], 2))
-        
+
         return product
