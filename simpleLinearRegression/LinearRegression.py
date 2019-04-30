@@ -68,3 +68,15 @@ class LinearRegression(object):
             product.append(round(x[a] * y[a], 2))
 
         return product
+
+    def setX(self, newX):
+        self.__x = newX
+
+    def setY(self, newY):
+        self.__y = newY
+
+    def getX(self):
+        return self.__x
+
+    def getY(self):
+        return self.__y
