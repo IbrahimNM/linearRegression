@@ -37,6 +37,11 @@ class LinearRegression(object):
         ''' Find mean value of an array '''
         return self.getSummation(column) / self.getCount(column)
 
+    '''
+        TODO: Evaluate and add the estimated error for the linear-regression equation
+            Standard error = sqrt(sum(y^ - y)^2 / n - 2)
+    '''
+
     def getCount(self, column):
         ''' return: # of elements. return length of x[] if x[] length is not greater than y[] length'''
         return len(self.__x) if len(self.__y) >= len(self.__x) else len(self.__y)
@@ -50,7 +55,6 @@ class LinearRegression(object):
         sum = []
         mean = self.getMean(column)
         for d in column:
-            #  (x - x') for all elements, and append each to sum[]
             sum.append(round(d - mean, 2))
         return sum
 
@@ -66,17 +70,20 @@ class LinearRegression(object):
         product = []
         for a in range(self.getCount(x)):
             product.append(round(x[a] * y[a], 2))
-
         return product
 
     def setX(self, newX):
+        ''' Set new value for X '''
         self.__x = newX
 
     def setY(self, newY):
+        ''' Set new value for Y '''
         self.__y = newY
 
     def getX(self):
+        ''' Return the value of X '''
         return self.__x
 
     def getY(self):
+        ''' Return the value of Y '''
         return self.__y

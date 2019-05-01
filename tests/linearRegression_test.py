@@ -14,6 +14,8 @@ def shared_instance():
     global current
     yield current
 
+# TODO: Add a list of datasets for testing purposes. 
+# http://people.sc.fsu.edu/~jburkardt/datasets/regression/regression.html
 
 @pytest.mark.parametrize(
     'number, word', [
