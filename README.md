@@ -3,11 +3,6 @@
 ## What Is This?
 This is an example of a **Simple Linear Regression** analysis. 
 
-## Equations used
-  * Linear Regression formula
-  * Standard deviation 
-  * Estimated random error formula
-  
 ## How to use this
   1. **Create** a new instance
   2. **Pass** values
@@ -21,6 +16,11 @@ This is an example of a **Simple Linear Regression** analysis.
     Y = [...]
   - Pass variables
   - Get function
+
+## Equations used
+  * Linear Regression formula
+  * Standard deviation 
+  * Estimated random error formula
   
 ## Note
 
