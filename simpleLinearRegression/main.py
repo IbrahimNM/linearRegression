@@ -1,10 +1,13 @@
 from LinearRegression import LinearRegression
 
-x = [1,2,3,4,5,6,7,8]
-y = [11,22,33,44,55,66,77,88]
+x = [1, 2, 3, 4, 5, 6, 7, 8]
+y = [11, 22, 33, 44, 55, 66, 77, 88]
 
 
-current = LinearRegression(x, y)
+current = LinearRegression()
+current.setX(x)
+current.setY(y)
+
 print current
 print 'Summation of x: ', current.getSummation(x)
 print 'Summation of y: ', current.getSummation(y)
@@ -24,4 +27,3 @@ func = current.getLinearRegressionFunction()
 print 'Function: ', current.getLinearRegressionFunction()
 print 'f(15): ', func(15)
 print 'X: ', current.getX()
-print 'Y: ', current.getY()

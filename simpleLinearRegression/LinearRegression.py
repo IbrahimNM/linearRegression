@@ -1,9 +1,11 @@
 import math
 
+# FIXME: Handle division by ZERO issue
+
 
 class LinearRegression(object):
 
-    def __init__(self, independentVariable, dependentVariable):
+    def __init__(self, independentVariable=[0], dependentVariable=[0]):
         self.__x = independentVariable
         self.__y = dependentVariable
 
