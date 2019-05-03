@@ -1,4 +1,6 @@
-# Linear Regression
+<p align="center">
+<a href="" target="_blank"><img src="https://latex.codecogs.com/png.latex?\dpi{200}&space;\huge&space;Linear&space;Regression" title="\huge Linear Regression" /></a>
+  </p>
 
 ## What Is This?
 This is an example of a **Simple Linear Regression** analysis. 
