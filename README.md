@@ -65,9 +65,18 @@ This is an example of a **Simple Linear Regression** analysis.
       myfunc = instance.getLinearRegressionFunction()
       ```
 ## Equations used
-  * Linear Regression formula
-  * Standard deviation 
-  * Estimated random error formula
+  * Linear Regression formula:
+      
+      <a href="" target="_blank"><img src="https://latex.codecogs.com/png.latex?y(x)&space;=&space;a&space;&plus;&space;bx" title="y(x) = a + bx" /></a>
+  * Standard deviation:
+  
+      <a href="" target="_blank"><img src="https://latex.codecogs.com/png.latex?S_{x}&space;=&space;\sqrt{\frac{\sum&space;(x-\bar{x})^{2}}{n&space;-&space;1}}" title="S_{x} = \sqrt{\frac{\sum (x-\bar{x})^{2}}{n - 1}}" /></a>
+      
+      <a href="" target="_blank"><img src="https://latex.codecogs.com/png.latex?S_{y}&space;=&space;\sqrt{\frac{\sum&space;(y-\bar{y})^{2}}{n&space;-&space;1}}" title="S_{y} = \sqrt{\frac{\sum (y-\bar{y})^{2}}{n - 1}}" /></a>
+  
+  * Pearson Correlation Coefficient:
+  
+    <a href="" target="_blank"><img src="https://latex.codecogs.com/png.latex?r&space;=&space;\frac{\sum((x&space;-&space;\bar{x})(y&space;-&space;\bar{y}))&space;}&space;{\sqrt{\sum&space;(x&space;-&space;\bar{x})^{2}&space;\sum(y&space;-&space;\bar{y})^{2}&space;}}" title="r = \frac{\sum((x - \bar{x})(y - \bar{y})) } {\sqrt{\sum (x - \bar{x})^{2} \sum(y - \bar{y})^{2} }}" /></a>
   
 ## Note
   * The **getLinearRegressionFunction()** returns a lambda function.
