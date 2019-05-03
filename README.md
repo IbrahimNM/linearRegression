@@ -68,6 +68,15 @@ This is an example of a **Simple Linear Regression** analysis.
       ```python
       myfunc = instance.getLinearRegressionFunction()
       ```
+  - Now you can use your lambda function:
+      ```python
+      print 'f(15) = ', myfunc(15)
+      ```
+      Output: 
+      ```bash
+      f(15) = 165.0
+      ```
+      
 ## :notebook:Equations used
   * Linear Regression formula:
       
