@@ -7,10 +7,14 @@ This is an example of a **Simple Linear Regression** analysis.
   1. **Create** a new instance and **Pass** your values:
       * Option 1:
       ```python
+      x = [...]
+      y = [...]
       instance = LinearRegression(x, y)
       ```
       * Option 2:
       ```python
+      x = [...]
+      y = [...]
       instance = LinearRegression()
       instance.setX(x)
       instance.setY(y)
@@ -33,22 +37,29 @@ This is an example of a **Simple Linear Regression** analysis.
       ```
       
       **What is going to be calculated after you pass you values?**
- 
+       * The average of both x and y:
+       
+           <a href="" target="_blank"><img src="https://latex.codecogs.com/png.latex?\bar{x}&space;=&space;4.5&space;,&space;\bar{y}&space;=&space;49.5&space;," title="\bar{x} = 4.5 , \bar{y} = 49.5 ," /></a>
+       
+       * The sum of each variable:
+       
+           <a href="" target="_blank"><img src="https://latex.codecogs.com/png.latex?\sum{x}&space;=&space;36.0&space;,&space;\sum{y}&space;=&space;396.0&space;," title="\sum{x} = 36.0 , \sum{y} = 396.0 ," /></a>
       
       | x | y | (x - x̅)    | (y - ȳ) | (x - x̅) * (y - ȳ) | (x - x̅)<sup>2</sup> | (y - ȳ)<sup>2</sup> |
       | - | - | -----------| ------- | ----------------- | ------------------- | ------------------- |
-      |1  |11 | -3.5       |-38.5    |  134.75           |                     |                     |
-      |2  |2  | -2.5       |-27.5    |  68.75            |                     |                     |
-      |3  |33 | -1.5       |-16.5    |  24.75            |                     |                     |
-      |4  |44 | -0.5       |-5.5     |  2.75             |                     |                     |
-      |5  |55 | 0.5        |5.5      |  2.75             |                     |                     |
-      |6  |66 | 1.5        | 16.5    |  24.75            |                     |                     |
-      |7  |77 | 2.5        |27.5     |  68.75            |                     |                     |
-      |8  |88 | 3.5        |38.5     |  134.75           |                     |                     |
+      |1  |11 | -3.5       |-38.5    |  134.75           |     12.25           |       1482.25       |
+      |2  |2  | -2.5       |-27.5    |  68.75            |     6.25            |       756.25        |
+      |3  |33 | -1.5       |-16.5    |  24.75            |     2.25            |       272.25        |
+      |4  |44 | -0.5       |-5.5     |  2.75             |     0.25            |       30.25         |
+      |5  |55 | 0.5        |5.5      |  2.75             |     0.25            |       30.25         |
+      |6  |66 | 1.5        | 16.5    |  24.75            |     2.25            |       272.25        |
+      |7  |77 | 2.5        |27.5     |  68.75            |     6.25            |       756.25        |
+      |8  |88 | 3.5        |38.5     |  134.75           |     12.25           |       1482.25       |
       
-      
-     <a href=""><img src="https://latex.codecogs.com/png.latex?\bar{x}&space;=&space;4.5&space;,&space;\bar{y}&space;=&space;49.5&space;,&space;\sum{x}&space;=&space;36.0&space;,&space;\sum{y}&space;=&space;396.0&space;,&space;\sigma{x}&space;=&space;2.45&space;,&space;\sigma{y}&space;=&space;26.94" title="\bar{x} = 4.5 , \bar{y} = 49.5 , \sum{x} = 36.0 , \sum{y} = 396.0 , \sigma{x} = 2.45 , \sigma{y} = 26.94" /></a>
-      
+       * The standard deviation of both x and y:
+           
+           <a href="" target="_blank"><img src="https://latex.codecogs.com/png.latex?\sigma{x}&space;=&space;2.45&space;,&space;\sigma{y}&space;=&space;26.94" title="\sigma{x} = 2.45 , \sigma{y} = 26.94" /></a>
+  
   - Get function
       ```python
       myfunc = instance.getLinearRegressionFunction()
