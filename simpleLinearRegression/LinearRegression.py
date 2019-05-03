@@ -61,6 +61,7 @@ class LinearRegression(object):
         return sum
 
     def getSquaredSum(self, column):
+        # FIXME: Should only do one job, which is to square the values in column
         ''' Square each element, then sum them togather '''
         sum = 0
         for a in column:
