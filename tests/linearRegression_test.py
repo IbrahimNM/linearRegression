@@ -1,11 +1,12 @@
 
 import pytest
 import os
-from simpleLinearRegression.LinearRegression import LinearRegression
+from LinearRegression.LinearRegression import LinearRegression
 
 SCOPE = "function"
 
 global current
+current = 0
 
 
 @pytest.fixture(scope=SCOPE)
@@ -17,7 +18,7 @@ def shared_instance():
 # TODO: Add a list of datasets for testing purposes.
 # http://people.sc.fsu.edu/~jburkardt/datasets/regression/regression.html
 
-# TODO: Test all functions
+# TODO: Add test-cases to all units
 
 
 @pytest.mark.parametrize(
@@ -37,4 +38,3 @@ def test_getX(shared_instance):
 
 def test_getY(shared_instance):
     assert shared_instance.getY() != 0
-    #assert True
