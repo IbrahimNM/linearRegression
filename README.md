@@ -2,7 +2,7 @@
 <a href="" target="_blank"><img src="https://latex.codecogs.com/png.latex?\dpi{200}&space;\huge&space;Linear&space;Regression" title="\huge Linear Regression" /></a>
   </p>
 
-## What Is This?
+## What is this?
 This is an example of a **Simple Linear Regression** analysis. 
 
 ## How to use this
@@ -30,7 +30,7 @@ This is an example of a **Simple Linear Regression** analysis.
       ```python
       myLinearFun = instance.getLinearRegressionFunction()
       ```
-      
+__________________ 
 ## Example :pencil2:
   - **Data**: 
     
@@ -98,7 +98,7 @@ This is an example of a **Simple Linear Regression** analysis.
   * Pearson Correlation Coefficient:
   
     <a href="" target="_blank"><img src="https://latex.codecogs.com/png.latex?r&space;=&space;\frac{\sum((x&space;-&space;\bar{x})(y&space;-&space;\bar{y}))&space;}&space;{\sqrt{\sum&space;(x&space;-&space;\bar{x})^{2}&space;\sum(y&space;-&space;\bar{y})^{2}&space;}}" title="r = \frac{\sum((x - \bar{x})(y - \bar{y})) } {\sqrt{\sum (x - \bar{x})^{2} \sum(y - \bar{y})^{2} }}" /></a>
-  
+_________________ 
 ## Notes :warning:
   * The **getLinearRegressionFunction()** returns a lambda function.
 ## Built With
