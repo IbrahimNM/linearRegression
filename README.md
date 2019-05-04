@@ -31,7 +31,7 @@ This is an example of a **Simple Linear Regression** analysis.
       myLinearFun = instance.getLinearRegressionFunction()
       ```
       
-## :pencil2:Example
+## Example :pencil2:
   - **Data**: 
     
     <a href="" target="_blank"><img src="https://latex.codecogs.com/png.latex?x&space;=&space;\begin{bmatrix}&space;1&&space;2&space;&3&space;&4&space;&5&space;&6&space;&7&space;&8&space;\end{bmatrix}" title="x = \begin{bmatrix} 1& 2 &3 &4 &5 &6 &7 &8 \end{bmatrix}" /></a>
@@ -81,7 +81,7 @@ This is an example of a **Simple Linear Regression** analysis.
       f(15) = 165.0
       ```
       
-## :notebook:Equations used
+## Equations used :notebook:
   * Linear Regression formula:
       
       <a href="" target="_blank"><img src="https://latex.codecogs.com/png.latex?y(x)&space;=&space;a&space;&plus;&space;bx" title="y(x) = a + bx" /></a>
@@ -99,7 +99,7 @@ This is an example of a **Simple Linear Regression** analysis.
   
     <a href="" target="_blank"><img src="https://latex.codecogs.com/png.latex?r&space;=&space;\frac{\sum((x&space;-&space;\bar{x})(y&space;-&space;\bar{y}))&space;}&space;{\sqrt{\sum&space;(x&space;-&space;\bar{x})^{2}&space;\sum(y&space;-&space;\bar{y})^{2}&space;}}" title="r = \frac{\sum((x - \bar{x})(y - \bar{y})) } {\sqrt{\sum (x - \bar{x})^{2} \sum(y - \bar{y})^{2} }}" /></a>
   
-## :warning:Note
+## Notes :warning:
   * The **getLinearRegressionFunction()** returns a lambda function.
 ## Built With
 * [Python](https://www.python.org/) - Python
