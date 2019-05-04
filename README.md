@@ -6,7 +6,11 @@
 This is an example of a **Simple Linear Regression** analysis. 
 
 ## How to use this
-  1. **Create** a new instance and **Pass** your values:
+  1. **Import** the module:
+      ```python
+      from LinearRegression import LinearRegression 
+      ```
+  2. **Create** a new instance and **Pass** your values:
       * Option 1:
       ```python
       x = [...]
@@ -21,7 +25,7 @@ This is an example of a **Simple Linear Regression** analysis.
       instance.setX(x)
       instance.setY(y)
       ```
-  2. **Get** the linear regression equation:
+  3. **Get** the linear regression equation:
       * **getLinearRegressionFunction()** returns a lambda function. 
       ```python
       myLinearFun = instance.getLinearRegressionFunction()
